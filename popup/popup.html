@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1337x Navigation Assistant</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <img class="logo-badge" src="../icons/logo.svg" alt="" width="32" height="32">
+        <div class="brand-info">
+          <h1 class="title">1337x Navigator</h1>
+          <p class="subtitle">Keyboard Page Assistant</p>
+        </div>
+      </div>
+      <div id="statusBadge" class="status-badge status-standby" role="status" aria-live="polite">
+        <span class="status-dot"></span>
+        <span id="statusText" class="status-text">Standby</span>
+      </div>
+    </header>
+
+    <!-- Master Switch -->
+    <section class="card primary-card">
+      <div class="setting-row">
+        <div class="setting-label">
+          <span class="setting-title">Enable Navigation</span>
+          <span class="setting-desc">ArrowLeft and ArrowRight shortcuts</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="toggleEnabled" aria-label="Enable keyboard navigation" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+    </section>
+
+    <!-- Additional Settings -->
+    <section class="card settings-card">
+      <div class="setting-row">
+        <div class="setting-label">
+          <span class="setting-title">Visual HUD Feedback</span>
+          <span class="setting-desc">Show on-screen navigation pill</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="toggleToast" aria-label="Show visual navigation feedback" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="setting-row">
+        <div class="setting-label">
+          <span class="setting-title">Alternative Keys</span>
+          <span class="setting-desc">Enable <kbd>A</kbd> / <kbd>D</kbd> and <kbd>[</kbd> / <kbd>]</kbd></span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="toggleAltKeys" aria-label="Enable alternative navigation keys">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </section>
+
+    <!-- Shortcut Cheatsheet -->
+    <section class="shortcuts-section">
+      <h2 class="section-title">Key Shortcuts</h2>
+      <div class="shortcuts-grid">
+        <div class="shortcut-item">
+          <div class="keycap-combo">
+            <kbd class="keycap">←</kbd>
+            <span class="keycap-or">or</span>
+            <kbd class="keycap alt-key">A</kbd>
+          </div>
+          <span class="shortcut-desc">Previous Page</span>
+        </div>
+        <div class="shortcut-item">
+          <div class="keycap-combo">
+            <kbd class="keycap">→</kbd>
+            <span class="keycap-or">or</span>
+            <kbd class="keycap alt-key">D</kbd>
+          </div>
+          <span class="shortcut-desc">Next Page</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span class="footer-tip">Safe: Automatically ignored when typing in search bars</span>
+      <span id="versionTag" class="version-tag">v1.0.0</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

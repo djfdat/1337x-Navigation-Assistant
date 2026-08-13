@@ -1,0 +1,61 @@
+{
+  "manifest_version": 3,
+  "name": "1337x Navigation Assistant",
+  "version": "1.0.0",
+  "description": "Navigate 1337x category and subcategory pages effortlessly using Left/Right arrow keys.",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "1337x Navigation Assistant",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*.1337x.to/*",
+    "*://*.1337x.st/*",
+    "*://*.1337x.ws/*",
+    "*://*.1337x.eu/*",
+    "*://*.1337x.se/*",
+    "*://*.1337x.is/*",
+    "*://*.1337x.gd/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.1337x.to/cat/*",
+        "*://*.1337x.to/sub/*",
+        "*://*.1337x.st/cat/*",
+        "*://*.1337x.st/sub/*",
+        "*://*.1337x.ws/cat/*",
+        "*://*.1337x.ws/sub/*",
+        "*://*.1337x.eu/cat/*",
+        "*://*.1337x.eu/sub/*",
+        "*://*.1337x.se/cat/*",
+        "*://*.1337x.se/sub/*",
+        "*://*.1337x.is/cat/*",
+        "*://*.1337x.is/sub/*",
+        "*://*.1337x.gd/cat/*",
+        "*://*.1337x.gd/sub/*"
+      ],
+      "js": [
+        "content/content.js"
+      ],
+      "css": [
+        "content/content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
